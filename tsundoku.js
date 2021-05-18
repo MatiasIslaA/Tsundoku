@@ -47,7 +47,6 @@ function apiCall() {
         let data = JSON.parse(this.response);
         if (request.status >= 200 && request.status < 400) {
           console.log(data);
-          let searchManga = document.querySelector(".search");
           Object.keys(data.results).map(function () {
             let image = document.getElementById("image");
             let chapters = document.getElementById("chapters");
