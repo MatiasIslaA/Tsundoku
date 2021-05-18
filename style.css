@@ -134,7 +134,7 @@ li {
   list-style: none;
   border-radius: 12px;
   padding: 5px;
-  cursor: default;
+  cursor: pointer;
 }
 li:hover {
   background-color: #cecdc3;

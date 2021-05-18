@@ -27,8 +27,6 @@ let loadMangas = function () {
       myLibrary.push(manga);
       addManga();
     }
-  } else {
-    return;
   }
 };
 function apiCall() {
@@ -46,12 +44,11 @@ function apiCall() {
         true
       );
       request.onload = function () {
-        // Begin accessing JSON data here
         let data = JSON.parse(this.response);
         if (request.status >= 200 && request.status < 400) {
           console.log(data);
-          let searchManga = document.querySelector(".oka");
-          Object.keys(data.results).map(function (key, index) {
+          let searchManga = document.querySelector(".search");
+          Object.keys(data.results).map(function () {
             let image = document.getElementById("image");
             let chapters = document.getElementById("chapters");
             if (data.results[0].chapters == 0) {
@@ -76,7 +73,7 @@ function uid() {
   return Date.now().toString(36) + Math.random().toString(36).substr(2);
 }
 
-function Manga(title, chapters, image, progress, uniqueId) {
+function Manga(title, chapters, image, progress) {
   const unique = uid();
   let progressNum;
   this.uniqueId = unique;
@@ -100,7 +97,7 @@ function Manga(title, chapters, image, progress, uniqueId) {
   };
 }
 
-let newManga = function () {
+const newManga = function () {
   let title = document.getElementById("title").value;
   let chapters = document.getElementById("chapters").value;
   let progress = document.getElementById("progress").value;
@@ -109,7 +106,7 @@ let newManga = function () {
   myLibrary.push(manga);
 };
 
-let addManga = function addMangaToLibrary() {
+const addManga = function addMangaToLibrary() {
   let display = document.getElementById("display");
   let ndiv = document.createElement("div");
   ndiv.className = "card";
@@ -142,65 +139,59 @@ window.onclick = function (event) {
   }
 };
 
+function recommendationColumn(title, chapters, image, initialStatus) {
+  let manga = new Manga(title, chapters, image, initialStatus);
+  myLibrary.push(manga);
+  addManga();
+}
+
 yotsubato.addEventListener("click", function () {
-  let manga = new Manga(
-    "Yotsuba!",
+  recommendationColumn(
+    "Yotsuba",
     "Unknown",
     "https://cdn.myanimelist.net/images/manga/3/57369.jpg?s=04002980dcd4cfd0fb15e3bb9597d934",
-    "Want to read"
+    "0"
   );
-  myLibrary.push(manga);
-  addManga();
 });
 shirokuma.addEventListener("click", function () {
-  let manga = new Manga(
-    "Shirokuma",
+  recommendationColumn(
+    "Shirokuma Café",
     "100",
     "https://cdn.myanimelist.net/images/manga/3/64713.jpg",
-    "Want to read"
+    "0"
   );
-  myLibrary.push(manga);
-  addManga();
 });
 takagi.addEventListener("click", function () {
-  let manga = new Manga(
+  recommendationColumn(
     "Teasing Master Takagi-san",
     "Unknown",
     "https://cdn.myanimelist.net/images/manga/3/136045.jpg",
-    "Want to read"
+    "0"
   );
-  myLibrary.push(manga);
-  addManga();
 });
 onepiece.addEventListener("click", function () {
-  let manga = new Manga(
+  recommendationColumn(
     "One Piece",
     "Unknown",
     "https://cdn.myanimelist.net/images/manga/3/55539.jpg",
-    "Want to read"
+    "0"
   );
-  myLibrary.push(manga);
-  addManga();
 });
 gantz.addEventListener("click", function () {
-  let manga = new Manga(
+  recommendationColumn(
     "Gantz",
     "383",
     "https://cdn.myanimelist.net/images/manga/4/157936.jpg",
-    "Want to read"
+    "0"
   );
-  myLibrary.push(manga);
-  addManga();
 });
 kami.addEventListener("click", function () {
-  let manga = new Manga(
+  recommendationColumn(
     "The World God Only Knows",
     "271",
     "https://cdn.myanimelist.net/images/manga/2/188974.jpg",
-    "Want to read"
+    "0"
   );
-  myLibrary.push(manga);
-  addManga();
 });
 
 const removeDiv = function (uniqueId) {
