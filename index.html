@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tsundoku</title>
+        <script src="https://kit.fontawesome.com/959f24c154.js" crossorigin="anonymous"></script>
+        <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+            </style>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1><a href= "index.html"><i class="em em-books" aria-role="presentation" aria-label="BOOKS"></i>Tsundoku</a></h1>
+            <h4><a href= "index.html">積ん読</a></h4>
+        </header>
+        <div class="container">
+            <div id="display-container">
+                <p class="column-title">Reading list:</p>
+                <div id="display">
+                    <button class="openForm"><i class="fas fa-plus fa-3x"></i> </br>Add new manga</button>
+                <div class="modal-container" id ="modal">
+                    <span class="close">&times;</span>
+                    <form class="form-container" id="myForm" autocomplete="off" >
+                        <label for="title">Title:</label><br />
+                        <input type="text" id="title" oninput"apiCall()" list="searchManga"/><br />
+                        <datalist id="searchManga" class="oka">
+                        </datalist>                  
+                        <label for="chapters">Chapters:</label><br />
+                        <input type="text" id="chapters" /><br />
+                        <label for="image">Image:</label><br />
+                        <input type="text" id="image" style ="pointer-events: none;"/><br />
+                        <label for="progress">Progress:</label><br />
+                        <input type="number" min="0" value="1" id="progress" /><br /> <br /><br />
+                        <input type="button" value="Add" id="add"/>           
+                    </form>
+                </div>
+                </div>
+            </div>
+            <div class="popup-add">
+                <div>
+                    <p class="column-title">Beginner-friedly:</p>
+                    <ul class="column">
+                        <li><button class="yotsubato"><i class="fas fa-plus fa-1x"></i></button>Yotsuba!</li>
+                        <li><button class="shirokuma"><i class="fas fa-plus fa-1x"></i></button>Shirokuma Café</li>
+                        <li><button class="takagi"><i class="fas fa-plus fa-1x"></i></button>Teasing Master Takagi-san</li>
+                        <li><button class="onepiece"><i class="fas fa-plus fa-1x"></i></button>One Piece!</li>
+                        <li><button class="gantz"><i class="fas fa-plus fa-1x"></i></button>Gantz</li>
+                        <li><button class="kami"><i class="fas fa-plus fa-1x"></i></button>The World God Only Knows</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p class="credits">
+                Made by
+                <a href="https://github.com/MatiasIslaA"
+                  ><i class="fab fa-github fa-sm"></i>Matías Isla</a
+                >.<br />
+                Powered by
+                <a href="https://jikan.moe/">Jikan API</a>.
+            </p>
+        </footer>
+        <script src="tsundoku.js"></script>
+    </body>
+</html>

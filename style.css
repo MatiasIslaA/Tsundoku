@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f4f3f3;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  color: #c7bfba;
+}
+
+header {
+  background-color: #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  line-height: 1;
+  width: 100%;
+  border-bottom: solid 1px rgb(49, 21, 126);
+}
+header h4 {
+  color: rgb(126, 113, 196);
+  font-size: 18px;
+}
+header h4 a {
+  color: rgb(126, 113, 196);
+  text-decoration: none;
+}
+header h1 {
+  color: rgb(52, 48, 71);
+}
+header h1 a {
+  color: rgb(52, 48, 71);
+  text-decoration: none;
+}
+.em {
+  margin-bottom: 5px;
+  height: 23px;
+  width: 23px;
+}
+.container {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  margin-top: 20px;
+  margin-left: 8%;
+  margin-right: 8%;
+  background-color: #f7f6f1;
+  border-radius: 10px;
+  min-height: 100vh;
+  height: 100%;
+}
+input,
+select {
+  font: inherit;
+  width: 100%;
+  height: 50px;
+  outline: none;
+  box-sizing: border-box;
+  background: #f7f6f1;
+  font-size: 17px;
+  color: rgb(109, 104, 104);
+  border: none;
+  padding: 15px;
+}
+
+#add {
+  background-color: rgb(126, 113, 196);
+  color: #fff;
+  height: auto;
+  cursor: pointer;
+}
+.form-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  line-height: 1.6;
+  text-align: left;
+  font-size: 25px;
+  color: rgb(126, 113, 196);
+}
+.column-title {
+  font-size: 23px;
+  width: auto;
+  color: rgb(49, 21, 126);
+  padding: 15px;
+}
+.popup-add {
+  text-align: left;
+}
+.column {
+  color: rgb(49, 21, 126);
+  line-height: 2.5;
+}
+#display {
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+}
+.card {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 180px;
+  max-width: 250px;
+  padding: 3rem 0 0;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-left: 15px;
+  overflow: hidden;
+  box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.2);
+}
+#card-status {
+  width: 100%;
+  height: 25px;
+  font-size: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #000;
+  display: none;
+
+  padding: 0%;
+  padding-left: 4px;
+}
+ul button {
+  border: none;
+  background-color: rgb(126, 113, 196);
+  color: white;
+  padding: 4px;
+  border-radius: 5px;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  border-radius: 12px;
+  padding: 5px;
+  cursor: default;
+}
+li:hover {
+  background-color: #cecdc3;
+  transition: 0.2s;
+}
+.openForm {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 230px;
+  line-height: 5;
+  max-width: 250px;
+  padding: 3rem 0px 0px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-left: 15px;
+  overflow: hidden;
+  border: none;
+  box-shadow: rgb(0 0 0 / 20%) 5px 4px 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #646261;
+
+  background-color: rgb(255, 255, 255);
+}
+.fas {
+  border-radius: 100%;
+}
+.openForm:hover .fas {
+  transition: 0.3s;
+  background-color: rgba(128, 128, 128, 0.096);
+  padding-right: 18px;
+  padding-left: 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.openForm:hover {
+  color: rgb(126, 113, 196);
+}
+.item-content {
+  position: relative;
+  padding: 10px;
+  color: rgb(49, 21, 126);
+  width: fit-content;
+  max-width: 200px;
+  bottom: -100px;
+  background-color: #fff;
+  left: 15px;
+}
+
+.item-details {
+  display: none;
+  font-size: 13px;
+}
+.update {
+  display: none;
+  font-size: 0.8rem;
+  background: none;
+  border: none;
+  color: rgb(70, 70, 71);
+  cursor: pointer;
+}
+.card:hover .item-content {
+  padding: 30px;
+  left: 0px;
+  bottom: 0;
+  width: 100%;
+  max-width: 200px;
+  height: 100%;
+  transition: 0.2s;
+}
+
+.card:hover .item-details {
+  display: grid;
+}
+.card:hover .inline {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.card:hover .update {
+  display: inline;
+}
+.card:hover #card-status {
+  display: block;
+}
+.card:hover {
+  transition: 0.3s;
+}
+#item-title {
+  font-weight: 500;
+  font-size: 17px;
+}
+#btn-details {
+  background-color: rgb(126, 113, 196);
+  padding: 10px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.modal-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.form-container {
+  background-color: #fefefe;
+  margin: auto;
+  padding: px;
+  border: 1px solid #888;
+  width: 40%;
+}
+.close {
+  color: #aaaaaa;
+  float: right;
+  margin-right: 30%;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer {
+  color: rgb(52, 48, 71);
+  border-top: solid 1px rgb(49, 21, 126);
+  background-color: white;
+  text-align: center;
+  padding: 5px;
+}
+footer a {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: auto;
+  }
+  #display {
+    grid-template-columns: auto;
+  }
+}
